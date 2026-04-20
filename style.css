@@ -1,0 +1,201 @@
+:root {
+    --primary:rgb(255,98,0);
+    --primary-hover:rgb(255, 98, 0);
+    --success: #16a34a;
+    --pending: #ea580c;
+    --danger: #dc2626;
+    --bg-body: #f1f5f9;
+    --bg-card: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --radius: 12px;
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+* { 
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: 'Inter', sans-serif; 
+}
+body { 
+    background-color: var(--bg-body); 
+    color: var(--text-main); 
+}
+
+/* Navigation */
+nav {
+    background: var(--primary);
+    color: white;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+}
+.hidden { 
+    display: none !important; 
+}
+.logo { 
+    font-size: 1.5rem; 
+    font-weight: 700; 
+}
+.logo span { 
+    font-weight: 300; 
+    opacity: 0.8; 
+}
+.btn-logout { background: rgba(255,255,255,0.2); 
+    border: none; 
+    color: white; 
+    padding: 8px 16px;
+     border-radius: 6px;
+    cursor: pointer; 
+}
+
+/* Transitions */
+.page-section { display: none; 
+    padding: 2rem 0; 
+    animation: fadeIn 0.4s ease; 
+}
+.active { 
+    display: block;
+ }
+@keyframes fadeIn { 
+    from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); }
+ }
+
+/* Login Layout */
+.login-container { 
+    height: 80vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+.login-card { 
+    background: var(--bg-card); 
+    padding: 2.5rem; 
+    border-radius: var(--radius); 
+    box-shadow: var(--shadow); 
+    width: 100%; max-width: 400px; 
+    text-align: center;
+ }
+
+/* Dashboard Layout */
+.container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px;
+ }
+.dashboard-header { 
+    margin-bottom: 2rem; 
+}
+.stats-grid {
+     display: grid; 
+     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+     gap: 1.5rem; margin-bottom: 2rem;
+    }
+.stat-card { 
+    background: var(--bg-card); 
+    padding: 1.5rem; 
+    border-radius: var(--radius); 
+    box-shadow: var(--shadow); 
+    border-left: 5px solid var(--primary); 
+}
+.stat-card .value { 
+    font-size: 1.75rem; 
+    font-weight: 700; 
+    margin-top: 0.5rem; 
+}
+.pending-border { 
+    border-color: var(--pending); 
+}
+.success-border {
+     border-color: var(--success); 
+    }
+
+.dashboard-main { 
+    display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; 
+}
+@media (max-width: 900px) { .dashboard-main { grid-template-columns: 1fr; } }
+
+.card { 
+    background: var(--bg-card);
+     padding: 1.5rem; border-radius: var(--radius); 
+     box-shadow: var(--shadow);
+     }
+
+/* Forms & UI */
+.form-group {
+     margin-bottom: 1rem; 
+     text-align: left; 
+    }
+label { 
+    display: block; 
+    font-size: 0.9rem; 
+    font-weight: 600; 
+    margin-bottom: 0.4rem;
+ }
+input, select, textarea { 
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #e2e8f0; 
+    border-radius: 8px; 
+}
+.btn { 
+    padding: 12px 24px; 
+    border-radius: 8px; 
+    border: none; 
+    font-weight: 600; 
+    cursor: pointer; 
+    transition: 0.2s; 
+}
+.btn-primary { 
+    background: var(--primary);
+     color: white; 
+     width: 100%; 
+    }
+.btn-approve { 
+    background: #dcfce7; 
+    color: var(--success); 
+    margin-right: 5px; 
+}
+.btn-reject { 
+    background: #fee2e2;
+     color: var(--danger);
+    }
+
+/* Table Styling */
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+}
+th { 
+    text-align: left; 
+    padding: 12px;
+    background: #f8fafc; 
+    color: var(--text-muted);
+    font-size: 0.8rem; 
+    }
+td { 
+    padding: 12px; 
+    border-bottom: 1px solid #f1f5f9;
+ }
+.badge { 
+    padding: 4px 10px;
+     border-radius: 20px; 
+     font-size: 0.7rem;
+      font-weight: 700; 
+    }
+.pending { 
+    background: #ffedd5; 
+    color: #9a3412; 
+}
+.approved { 
+    background: #dcfce7; 
+    color: #166534; 
+}
+.view-link { 
+    color: var(--primary); 
+    text-decoration: none; 
+    font-size: 0.9rem; 
+}
